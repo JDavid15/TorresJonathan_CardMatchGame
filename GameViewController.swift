@@ -21,21 +21,21 @@ class GameViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     
     //Game's Timers
-    var miscSeconds = 0
-    var miscTimers = Timer()
-    var gameTimer = Timer()
-    var gameSeconds = 0
-    var gameMinutes = 0
-    var timerActive = false
+    @objc var miscSeconds = 0
+    @objc var miscTimers = Timer()
+    @objc var gameTimer = Timer()
+    @objc var gameSeconds = 0
+    @objc var gameMinutes = 0
+    @objc var timerActive = false
     
     //Cards Arrays
     var gameArray: [(img: UIImage, id: Int )] = [(UIImage,Int)]()
     
     //Selected Cards in-game and game elements
-    var cardsPicked = Int()
+    @objc var cardsPicked = Int()
     var firstCardId: (Int, Int) = (0,0)
     var secondCardId: (Int, Int) = (0,0)
-    var numberOfPairs = 0
+    @objc var numberOfPairs = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ class GameViewController: UIViewController {
     }
     
     //function for the pre-game countdown
-    func preGameTimer(){
+    @objc func preGameTimer(){
         
         miscSeconds -= 1
         
@@ -174,7 +174,7 @@ class GameViewController: UIViewController {
 
     }
     //function if the cards picked were a match
-    func correctPair(){
+    @objc func correctPair(){
         
         //Hide both cards and add one confirmed pair on a counter
         cardViews[firstCardId.0].isHidden = true
@@ -213,7 +213,7 @@ class GameViewController: UIViewController {
     }
     
     //function if the cards picked are not a match
-    func incorrectPair(){
+    @objc func incorrectPair(){
         
         //hide the cards again and give the user control over the first card picked
             cardImages[firstCardId.0].image = #imageLiteral(resourceName: "OptimaFontQuestionMark")
@@ -273,7 +273,7 @@ class GameViewController: UIViewController {
     }
     
     //Fuction for the main game Timer
-    func mainTimer(){
+    @objc func mainTimer(){
         //add a second every run
         gameSeconds += 1
         
