@@ -5,5 +5,3 @@ This is a Card Memory game that I developed to show my knowledge of the Storyboa
 To its simple, you will be showed cards and you must memorise the position of the cards. Then select and match those cards
 
 Requirements: This app requires a Iphone or an Apple Table.
-
-Bugs: Has not been Updated for Swift 4
